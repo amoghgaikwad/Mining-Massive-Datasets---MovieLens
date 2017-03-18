@@ -1,0 +1,19 @@
+Class Mapper
+	method Map(docid a, doc d)
+		create a dictionary()
+		for every line ∈ doc d do
+			if rating < 4 then 
+				continue
+			else 
+				dictionary[user].append(movie)
+		for each list ∈ dictionary[user]
+			EMIT(pair(a,b), 1)
+
+
+Class Reducer
+	method Reducer(pair p, count[c1,c2,...])
+		sum <- 0
+		for every pair p
+			for all count c ∈ count
+				sum <- sum+count
+		EMIT(pair p, count) 

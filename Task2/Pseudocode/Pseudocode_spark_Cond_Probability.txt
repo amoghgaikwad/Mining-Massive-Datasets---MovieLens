@@ -1,0 +1,24 @@
+Class Mapper
+	method S(x)
+		for every line ∈ x do
+			if x.rating < 4 then 
+				continue
+			else 
+				dictionary[user].append(movie)
+		for each list ∈ dictionary[user]
+		return {movie_id, list<k>}
+
+	method R(k)
+		For every movie_id in list<>
+			make pairs(m1,m2) 
+			return {pair,count}
+
+	/* Now the spark computtaion: */
+	counts = lines.flatMap(S(x))\
+                  .map(lambda k: x[1])\
+                  .flatMap(R(k)).map(lambda m: (tuple(m), 1))\
+                  .reduceByKey(lambda x,y : x+y)
+    t_count= counts.count()
+    probability = counts.filter(lambda (x, v): x == v).count() / t_count.count()
+    output = probability.filter(lambda a : float(a[0])>0.8)
+    output.pprint()

@@ -1,0 +1,19 @@
+Class Mapper
+	method S(x)
+		for every line ∈ x do
+			if x.rating < 4 then 
+				continue
+			else 
+				dictionary[user].append(movie)
+		for each list ∈ dictionary[user]
+		return {movie_id, list<k>}
+
+	method R(k)
+		For every movie_id in list<>
+			make pairs(m1,m2) 
+			return {pair,count}
+			
+    counts = lines.flatMap(S(x))\
+                  .map(lambda k: x[1])\
+                  .flatMap(R(k)).map(lambda m: (tuple(m), 1))\
+                  .reduceByKey(lambda x,y : x+y)

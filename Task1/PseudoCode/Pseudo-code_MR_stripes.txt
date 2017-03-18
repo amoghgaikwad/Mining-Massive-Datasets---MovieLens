@@ -1,0 +1,22 @@
+Class Mapper
+	method Map(docid a, doc d)
+		create a dictionary()
+		for every line ∈ doc d do
+			if rating < 4 then 
+				continue
+			else 
+				dictionary[user].append(movie)
+		for each list ∈ dictionary[user]
+			Make pairs(a,b) of movieid <- movieid_list
+		for each pairs in the movieid_list
+			EMIT Stripes(Movie_id, {<list of movie_ids with their count>}) # ex: 465 	{'785': 2, '469': 2, '474': 2}
+
+
+Class Reducer
+	method Reducer(movie m_id, stripe[])
+		sum <- 0
+		make seperate pairs(p) of m_id and corresponding movie_id in stripe[]
+		for every pair p 
+			for all count c ∈ count
+				sum <- sum+count
+		EMIT(pair p, count) 

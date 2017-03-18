@@ -1,0 +1,8 @@
+Method getname(file1,file2)
+	for every line in file1
+		for every line in file2
+		if file1.movie_id_1 == file2.movie_id
+			name1 <- file2.name
+		if file1.movie_id_2 == file2.movie_id
+			name2 <- file2.name
+		EMIT(name1, name2, count)
